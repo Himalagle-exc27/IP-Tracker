@@ -1,0 +1,43 @@
+cyan='\033[36;1m'
+green='\033[32;1m'
+clear
+figlet -f shadow "Himalagle" | lolcat
+sleep 1
+echo $green "REMEMBER ABOUT THEM THEY ARE USELESS"
+echo $cyan
+while true; do
+    echo "1. IP Tracker"
+    echo "2. Whois Lookup"
+    echo "3. Install All Packages"
+    echo "4. Kali Linux Commands"
+    echo "5. Exit This Tools"
+    read -p "Choose an option: " option
+
+    case $option in
+        1)
+            read -p "Enter IP to track: " ip
+            curl http://ip-api.com/$ip
+            ;;
+        2)
+            read -p "Enter domain or IP for whois: " domain
+            whois $domain
+            ;;
+        3)
+            echo "Installing all necessary packages..."
+            sudo apt update && sudo apt upgrade -y && sudo apt install -y kali-tools-top10 kali-linu>
+            ;;
+        4)
+            echo "Here are some secret commands:"
+            echo "1. Steganography Tool: steghide"
+            echo "2. Directory Brute Force: gobuster"
+            echo "3. Hash Cracking Tool: hashcat"
+            ;;
+        5)
+            echo "Exiting..."
+            exit 0
+            ;;
+        *)
+            echo "Invalid option, try again."
+            ;;
+    esac
+done
